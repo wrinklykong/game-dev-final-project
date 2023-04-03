@@ -15,7 +15,8 @@ public class InventorySO : ScriptableObject
         for ( i = 0; i < inventorySize; i++ ) {
             if ( !objects[i] ) {
                 objects[i] = item;
-                return 0;
+                Debug.Log(i);
+                return i;
             }
         }
         return -1;

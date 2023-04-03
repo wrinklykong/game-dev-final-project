@@ -15,7 +15,7 @@ public class ItemCollisions : MonoBehaviour
             ItemSO itemTouched = other.gameObject.GetComponent<Container>().item;
             Debug.Log(itemTouched);
             if (itemTouched) {
-                inventory.addItem(itemTouched, 1);
+                inventory.addItem(itemTouched);
                 panel.updateInventory();
                 Destroy(other.gameObject);
             }

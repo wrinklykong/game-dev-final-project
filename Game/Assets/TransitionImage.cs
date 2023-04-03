@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class TransitionImage : MonoBehaviour
 {
-    public Image img;
+    Image img;
     public float fadeInTime = 1;
     // Start is called before the first frame update
 
     void Start()
     {
         FadeIn();
+        img = GetComponent<Image>();
     }
 
     IEnumerator FadeIn() {
