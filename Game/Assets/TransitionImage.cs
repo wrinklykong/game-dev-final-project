@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TransitionImage : MonoBehaviour
 {
     Image img;
-    public float fadeInTime = 1;
+    public float fadeInTime = 3;
     // Start is called before the first frame update
 
     void Start()
     {
-        FadeIn();
         img = GetComponent<Image>();
+        FadeIn();
     }
 
     IEnumerator FadeIn() {
@@ -43,6 +44,7 @@ public class TransitionImage : MonoBehaviour
                 img.color = new Color(0,0,0,Mathf.Lerp(1, 0, timer/fadeInTime));
             }
         }
+        SceneManager.LoadScene("HouseScene", LoadSceneMode.Single);
         yield return null;
     }
 }

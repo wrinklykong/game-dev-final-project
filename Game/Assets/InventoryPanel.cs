@@ -9,11 +9,13 @@ public class InventoryPanel : MonoBehaviour
     
     Item[] itemsInventory;
 
+    void Start() {
+        inventory.clearInventory();
+        updateInventory();
+    }
 
     public int updateInventory() {
         itemsInventory = GetComponentsInChildren<Item>();
-        Debug.Log("itemsInventory.Length:");
-        Debug.Log(itemsInventory.Length);
         int i = 0;
 
         // change to Inventory size in case the size of the inventory changes

@@ -7,15 +7,32 @@ using UnityEngine;
 
 public class InventorySO : ScriptableObject
 {
-    const int inventorySize = 10;
+    const int inventorySize = 12;
     public ItemSO[] objects = new ItemSO[inventorySize];
 
+    public int clearInventory() {
+        int i = 0;
+        for ( i = 0; i < inventorySize; i++ ) {
+            if ( removeItem(i) != i ) {
+                return -1;
+            }
+        }
+        return 1;
+    }
+
+    public int removeItem(int pos) {
+        if ( objects[pos] ) {
+            objects[pos] = null;
+            return pos;
+        }
+        return -1;
+    }
+    
     public int addItem(ItemSO item) {
         int i = 0;
         for ( i = 0; i < inventorySize; i++ ) {
             if ( !objects[i] ) {
                 objects[i] = item;
-                Debug.Log(i);
                 return i;
             }
         }
@@ -28,7 +45,7 @@ public class InventorySO : ScriptableObject
         }
         else {            
             objects[pos] = item;
-            return 0;
+            return pos;
         }
     }
 
