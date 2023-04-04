@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class TransitionImage : MonoBehaviour
 {
     Image img;
-    public float fadeInTime = 3;
+    public float fadeInTime = 2;
     // Start is called before the first frame update
 
     void Start()
@@ -26,10 +26,10 @@ public class TransitionImage : MonoBehaviour
             while ( timer<fadeInTime){
                 yield return null;
                 timer+=Time.deltaTime;
-                img.color = new Color(0,0,0,Mathf.Lerp(0, 1, timer/fadeInTime));
+                img.color = new Color(0,0,0,Mathf.Lerp(1, 0, timer/fadeInTime));
             }
         }
-        yield return null;
+        return null;
     }
 
     public IEnumerator FadeOut() {
@@ -41,10 +41,11 @@ public class TransitionImage : MonoBehaviour
             while ( timer<fadeInTime){
                 yield return null;
                 timer+=Time.deltaTime;
-                img.color = new Color(0,0,0,Mathf.Lerp(1, 0, timer/fadeInTime));
+                img.color = new Color(0,0,0,Mathf.Lerp(0, 1, timer/fadeInTime));
             }
         }
+        // TO-DO: Fix thhis transition, no exiting transition happens :,(
         SceneManager.LoadScene("HouseScene", LoadSceneMode.Single);
-        yield return null;
+        return null;
     }
 }
