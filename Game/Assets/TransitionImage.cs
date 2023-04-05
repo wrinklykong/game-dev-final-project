@@ -45,7 +45,7 @@ public class TransitionImage : MonoBehaviour
                 Debug.Log("Hey guyz :3");
             }
         }
-        // TO-DO: Fix thhis transition, no exiting transition happens :,(
+        // TO-DO: Fix thhis transition, no exiting transition happens :,
         SceneManager.LoadScene("HouseScene", LoadSceneMode.Single);
         return null;
     }

@@ -34,8 +34,8 @@ public class ItemButtonDown : MonoBehaviour
             while ( timer<fadeInTime){
                 yield return null;
                 timer+=Time.deltaTime;
-                inventoryPanel.position = ogInventory + new Vector3(0, Mathf.Lerp(0,4,timer/fadeInTime) ,0);
-                transform.position = ogButton - new Vector3(0, Mathf.Lerp(0,4,timer/fadeInTime) ,0);
+                inventoryPanel.position = ogInventory + new Vector3(ogInventory.x, Mathf.Lerp(0,4,timer/fadeInTime) ,0);
+                transform.position = ogButton - new Vector3(ogButton.x, Mathf.Lerp(0,4,timer/fadeInTime) ,0);
             }
         }
         return null;
@@ -53,8 +53,8 @@ public class ItemButtonDown : MonoBehaviour
             while ( timer<fadeInTime){
                 yield return null;
                 timer+=Time.deltaTime;
-                inventoryPanel.position = ogInventory - new Vector3(0, Mathf.Lerp(4,0,timer/fadeInTime) ,0);
-                transform.position = ogButton + new Vector3(0, Mathf.Lerp(4,0,timer/fadeInTime) ,0);
+                inventoryPanel.position = ogInventory - new Vector3(ogInventory.x, Mathf.Lerp(4,0,timer/fadeInTime) ,0);
+                transform.position = ogButton + new Vector3(ogButton.x, Mathf.Lerp(4,0,timer/fadeInTime) ,0);
             }
         }
         return null;
