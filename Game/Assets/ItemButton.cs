@@ -8,8 +8,9 @@ public class ItemButton : MonoBehaviour
     public Transform inventoryPanel;
     public Transform buttonTransform;
     public Transform cameraPos;
+    public SFXAudioScript sfxSource;
 
-    public float fadeInTime = 0.5f;
+    public float fadeInTime = 0.2f;
 
     public void onInventoryExpandClick() {
         ShowInventory();
@@ -23,6 +24,7 @@ public class ItemButton : MonoBehaviour
     public IEnumerator ShowInventory() {
         // enable the image
 
+        sfxSource.playClip("pullUpInventory", "o");
         StartCoroutine(ShowInventoryRoutine());
         IEnumerator ShowInventoryRoutine(){
             Vector3 ogInventory = inventoryPanel.position;
@@ -49,6 +51,7 @@ public class ItemButton : MonoBehaviour
     public IEnumerator HideInventory() {
         // enable the image
 
+        sfxSource.playClip("pullDownInventory", "o");
         StartCoroutine(HideInventoryRoutine());
         IEnumerator HideInventoryRoutine(){
             Vector3 ogInventory = inventoryPanel.position;
