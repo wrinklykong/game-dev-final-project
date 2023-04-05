@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 29755150}
   - component: {fileID: 29755149}
   - component: {fileID: 29755148}
-  - component: {fileID: 29755151}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -156,8 +155,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 484579052}
-  m_Father: {fileID: 310139034}
-  m_RootOrder: 1
+  m_Father: {fileID: 497692280}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -186,7 +185,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -208,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 29755151}
+      - m_Target: {fileID: 785869798}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: onInventoryDepressClick
         m_Mode: 1
@@ -234,13 +233,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 419ade8f63b68f54bbd0d2bc34beec77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3259249824d2464449dc9a99d83950ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -258,20 +257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29755146}
   m_CullTransparentMesh: 1
---- !u!114 &29755151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29755146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f27272a007a244b46ab9abef993717fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 310139034}
-  fadeInTime: 0.5
 --- !u!4 &34289352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7698900020108105104, guid: 77368e8a92de9b94f8017b571f7afcaa, type: 3}
@@ -882,7 +867,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 263565867}
-  - {fileID: 29755147}
   m_Father: {fileID: 497692280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1549,6 +1533,7 @@ RectTransform:
   m_Children:
   - {fileID: 310139034}
   - {fileID: 432488848}
+  - {fileID: 29755147}
   - {fileID: 785869797}
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
@@ -2479,7 +2464,7 @@ RectTransform:
   m_Children:
   - {fileID: 712883259}
   m_Father: {fileID: 497692280}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2499,6 +2484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 310139034}
+  buttonTransform: {fileID: 29755147}
   fadeInTime: 0.5
 --- !u!114 &785869799
 MonoBehaviour:

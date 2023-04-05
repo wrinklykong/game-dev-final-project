@@ -42,6 +42,7 @@ public class TransitionImage : MonoBehaviour
                 yield return null;
                 timer+=Time.deltaTime;
                 img.color = new Color(0,0,0,Mathf.Lerp(0, 1, timer/fadeInTime));
+                Debug.Log("Hey guyz :3");
             }
         }
         // TO-DO: Fix thhis transition, no exiting transition happens :,(
