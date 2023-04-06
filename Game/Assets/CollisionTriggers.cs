@@ -9,10 +9,14 @@ public class CollisionTriggers : MonoBehaviour
     public InventorySO inventory;
     public InventoryPanel panel;
     public TransitionImage transition;
-    private Image alertImage;
-    private bool touchingNPC;
     public DialogueScript dialogueContainer;
+    public SFXAudioScript mixer;
+
     private Collider2D currentCollision;
+    private bool touchingNPC;
+    private Image alertImage;
+
+
 
     public void Start() {
         alertImage = GetComponentInChildren<Image>();
@@ -35,6 +39,7 @@ public class CollisionTriggers : MonoBehaviour
                 if ( inventory.addItem(itemTouched) != -1 ) {
                     panel.updateInventory();
                     Destroy(other.gameObject);
+                    mixer.playClip("item", "o");
                 }
                 else {
                     // message above item that says your inventory is full
@@ -46,6 +51,7 @@ public class CollisionTriggers : MonoBehaviour
         }
         else if ( other.CompareTag("door")) {
             // Debug.Log("Touching door!");
+            mixer.playClip("door", "o");
             transition.FadeOut();
         }
         else if ( other.CompareTag("npc") ) {

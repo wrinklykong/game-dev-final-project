@@ -8,6 +8,8 @@ public class SFXAudioScript : MonoBehaviour
     [Header("Audio Clips")]
     public AudioClip pullUpInventory;
     public AudioClip pullDownInventory;
+    public AudioClip doorSFX;
+    public AudioClip itemSFX;
 
     public AudioClip errorSFX;
 
@@ -25,6 +27,12 @@ public class SFXAudioScript : MonoBehaviour
                 break;
             case "pullDownInventory":
                 clipToBePlayed = pullDownInventory;
+                break;
+            case "door":
+                clipToBePlayed = doorSFX;
+                break;
+            case "item":
+                clipToBePlayed = itemSFX;
                 break;
             default:
                 clipToBePlayed = errorSFX;
