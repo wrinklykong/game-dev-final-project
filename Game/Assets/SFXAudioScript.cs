@@ -10,6 +10,9 @@ public class SFXAudioScript : MonoBehaviour
     public AudioClip pullDownInventory;
     public AudioClip doorSFX;
     public AudioClip itemSFX;
+    public AudioClip pickUp;
+    public AudioClip setDown;
+    public AudioClip badClick;
 
     public AudioClip errorSFX;
 
@@ -33,6 +36,15 @@ public class SFXAudioScript : MonoBehaviour
                 break;
             case "item":
                 clipToBePlayed = itemSFX;
+                break;
+            case "pickUp":
+                clipToBePlayed = pickUp;
+                break;
+            case "setDown":
+                clipToBePlayed = setDown;
+                break;
+            case "badClick":
+                clipToBePlayed = badClick;
                 break;
             default:
                 clipToBePlayed = errorSFX;

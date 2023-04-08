@@ -57,14 +57,18 @@ public class ItemButton : MonoBehaviour
             Vector3 ogInventory = inventoryPanel.position;
             Vector3 ogButton = transform.position;
             Vector3 otherButton = buttonTransform.position;
+            Vector3 ogCamera = cameraPos.position;
+            Vector3 deltaCamera;
 
             float timer = 0;
-            while ( timer<fadeInTime){
+            while ( timer<fadeInTime){                
+                deltaCamera = ogCamera-cameraPos.position;
+
                 yield return null;
                 timer+=Time.deltaTime;
-                inventoryPanel.position = ogInventory - new Vector3(0, Mathf.Lerp(0,4,timer/fadeInTime) ,0);
-                transform.position = ogButton + new Vector3(0, Mathf.Lerp(0,4,timer/fadeInTime) ,0);
-                buttonTransform.position = otherButton - new Vector3(0, Mathf.Lerp(0,4,timer/fadeInTime) ,0);
+                inventoryPanel.position = ogInventory - new Vector3(0, Mathf.Lerp(0,4,timer/fadeInTime) ,0) - deltaCamera;;
+                transform.position = ogButton + new Vector3(0, Mathf.Lerp(0,4,timer/fadeInTime) ,0) - deltaCamera;;
+                buttonTransform.position = otherButton - new Vector3(0, Mathf.Lerp(0,4,timer/fadeInTime) ,0) - deltaCamera;;
             }
         }
         return null;

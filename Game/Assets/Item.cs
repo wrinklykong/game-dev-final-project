@@ -9,10 +9,11 @@ public class Item : MonoBehaviour
     public Sprite spriteObject;
 
     public void updateImage() {
-        Image[] itemImg = GetComponentsInChildren<Image>();
-        if ( itemImg[1] ) {
-            itemImg[1].color = new Color(0,0,0,1);
-            itemImg[1].sprite = spriteObject;
+        Button[] itemButton = GetComponentsInChildren<Button>();
+        if ( itemButton[0] ) {
+            itemButton[0].image.enabled = true;
+            itemButton[0].image.color = new Color(0,0,0,1);
+            itemButton[0].image.sprite = spriteObject;
         }
         else {
             Debug.Log("ERROR: No Image found in Child class");

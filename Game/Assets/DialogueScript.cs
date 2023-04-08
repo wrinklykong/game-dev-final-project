@@ -54,9 +54,17 @@ public class DialogueScript : MonoBehaviour
 
     void showBox() {
         canvas.enabled = true;
+        Canvas[] allCanvases = inventoryCanvas.GetComponentsInChildren<Canvas>();
+        foreach ( Canvas a in allCanvases ) {
+            a.enabled = false;
+        }
     }
     void hideBox() {
         canvas.enabled = false;
+        Canvas[] allCanvases = inventoryCanvas.GetComponentsInChildren<Canvas>();
+        foreach ( Canvas a in allCanvases ) {
+            a.enabled = true;
+        }
     }
 
 
