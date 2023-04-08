@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Console
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 98
+  controlID: 19
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 99
+  controlID: 24
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 100
+  controlID: 25
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -309,7 +309,7 @@ MonoBehaviour:
     m_SaveData: []
   m_MixersTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 62e6feff
+    m_SelectedIDs: 
     m_LastClickedID: -72094
     m_ExpandedIDs: 12eb343c
     m_RenameOverlay:
@@ -987,7 +987,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 162b0100
     m_LastClickedID: 76566
-    m_ExpandedIDs: 00000000be69000094710000122b010000ca9a3b
+    m_ExpandedIDs: 00000000d06a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1015,7 +1015,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000be690000
+    m_ExpandedIDs: 00000000d06a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1143,9 +1143,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f8120100
-      m_LastClickedID: 70392
-      m_ExpandedIDs: 9ce1feff761effffbe3cffff966fffffa06fffffae72ffffe8cfffffd0eaffff34ebffff2cfbffff266800005e68000006690000640c01006e0c01007e0c01004e1201008c120100a812010054130100ce130100
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 5cf5ffffa4f5ffffc8f5ffffdaf5ffffdef5ffffacf6fffff4f6ffffb8f8ffffcaf8ffffd0f8ffff2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1449,9 +1449,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.4793764, y: 2.6004684, z: 1.0061016}
+    m_Target: {x: 2.7692, y: 2.5102198, z: 0.9794948}
     speed: 2
-    m_Value: {x: 1.4793764, y: 2.6004684, z: 1.0061016}
+    m_Value: {x: 2.7692, y: 2.5102198, z: 0.9794948}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1502,9 +1502,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.182158
+    m_Target: 4.5220532
     speed: 2
-    m_Value: 4.182158
+    m_Value: 4.5220532
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1522,7 +1522,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

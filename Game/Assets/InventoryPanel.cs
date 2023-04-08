@@ -8,6 +8,7 @@ public class InventoryPanel : MonoBehaviour
     public InventorySO inventory;
     
     Item[] itemsInventory;
+    Item heldItem;
 
     void Start() {
         inventory.clearInventory();
