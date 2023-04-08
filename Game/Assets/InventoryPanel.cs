@@ -7,16 +7,18 @@ public class InventoryPanel : MonoBehaviour
 
     public InventorySO inventory;
     
-    Item[] itemsInventory;
-    Item heldItem;
+    private Item[] itemsInventory;
+
+    private Item heldItem;
+    private bool playerHoldingItem;
 
     void Start() {
+        itemsInventory = GetComponentsInChildren<Item>();
         inventory.clearInventory();
         updateInventory();
     }
 
     public int updateInventory() {
-        itemsInventory = GetComponentsInChildren<Item>();
         int i = 0;
 
         // change to Inventory size in case the size of the inventory changes
