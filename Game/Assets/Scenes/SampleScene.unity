@@ -1379,7 +1379,7 @@ RectTransform:
   - {fileID: 1559552671}
   - {fileID: 1978354831}
   m_Father: {fileID: 310139034}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1461,6 +1461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: e36401c61df357b438450bafdbf512c5, type: 2}
+  itemsInventory: []
 --- !u!114 &263565872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,8 +1607,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 263565867}
   - {fileID: 1141708527}
+  - {fileID: 263565867}
   m_Father: {fileID: 497692280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8681,11 +8682,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 310139034}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00000023841858}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 9.720001, y: -10.575}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141708528
@@ -8702,6 +8703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: e36401c61df357b438450bafdbf512c5, type: 2}
   sfxMixer: {fileID: 664945822}
+  ip: {fileID: 263565871}
 --- !u!114 &1141708529
 MonoBehaviour:
   m_ObjectHideFlags: 0

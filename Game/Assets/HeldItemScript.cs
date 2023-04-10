@@ -12,15 +12,18 @@ public class HeldItemScript : MonoBehaviour
     private Transform pos;
     private float timeClicked;
     private bool canUseItem;
+    private int itemHeldDown;
 
     public InventorySO playerInventory;
     public SFXAudioScript sfxMixer;
+    public InventoryPanel ip;
 
     void Start() {
         holdingItem = false;
         img = GetComponent<Image>();
         pos = GetComponent<Transform>();
         canUseItem = false;
+        itemHeldDown = -1;
 
         img.enabled = false;
     }
@@ -49,11 +52,13 @@ public class HeldItemScript : MonoBehaviour
             Debug.Log("TODO: Swap held items");
         }
         else if ( playerInventory.objects[itemNum] ) {       // if item exists, grab it
+            itemHeldDown = itemNum;
             img.enabled = true;
             holdingItem = true;
-            img.sprite = playerInventory.objects[itemNum].img;
+            img.sprite = playerInventory.objects[itemHeldDown].img;
             timeClicked = Time.time;
             sfxMixer.playClip("pickUp", "o");
+            ip.itemsInventory[itemHeldDown].blankImage();
         }
         else {
             Debug.Log("No item found!");            
@@ -67,5 +72,7 @@ public class HeldItemScript : MonoBehaviour
         canUseItem = false;
         timeClicked = 0f;
         sfxMixer.playClip("setDown", "o");
+        ip.itemsInventory[itemHeldDown].showImage();
+        itemHeldDown = -1;
     }
 }

@@ -7,10 +7,8 @@ public class InventoryPanel : MonoBehaviour
 
     public InventorySO inventory;
     
-    private Item[] itemsInventory;
+    public Item[] itemsInventory;
 
-    private Item heldItem;
-    private bool playerHoldingItem;
 
     void Start() {
         itemsInventory = GetComponentsInChildren<Item>();
@@ -31,4 +29,5 @@ public class InventoryPanel : MonoBehaviour
         }
         return 1;
     }
+    
 }

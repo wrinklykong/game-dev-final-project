@@ -19,4 +19,24 @@ public class Item : MonoBehaviour
             Debug.Log("ERROR: No Image found in Child class");
         }
     }
+
+    public void blankImage() {
+        Button[] itemButton = GetComponentsInChildren<Button>();
+        if ( itemButton[0] ) {
+            itemButton[0].image.enabled = false;
+        }
+        else {
+            Debug.Log("ERROR: No image found in Child class");
+        }
+    }
+
+    public void showImage() {
+        Button[] itemButton = GetComponentsInChildren<Button>();
+        if ( itemButton[0] ) {
+            itemButton[0].image.enabled = true;
+        }
+        else {
+            Debug.Log("ERROR: No image found in Child class");
+        }
+    }
 }
