@@ -39,8 +39,8 @@ public class HeldItemScript : MonoBehaviour
         if ( holdingItem ) {
             Vector2 relativePosition = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             pos.position = relativePosition;
-            childSpritePos.position = relativePosition + new Vector2(0,1);
-            itemActionText.transform.position = relativePosition + new Vector2(2,1);
+            childSpritePos.position = relativePosition + new Vector2(0,0.5f);
+            itemActionText.transform.position = relativePosition + new Vector2(0.75f,0.2f);
             if ( !canUseItem && Time.time - timeClicked > 0.15 ) {
                 canUseItem = true;
             }
@@ -67,7 +67,6 @@ public class HeldItemScript : MonoBehaviour
             timeClicked = Time.time;
             sfxMixer.playClip("pickUp", "o");
             ip.itemsInventory[itemHeldDown].blankImage();
-            childSpriteSpr.enabled = true;
         }
         else {
             Debug.Log("No item found!");            
@@ -97,6 +96,7 @@ public class HeldItemScript : MonoBehaviour
         //     itemActionText.text = "Not edible!";
         // }
         itemActionText.text = "Eat!";
+        childSpriteSpr.enabled = true;
         itemActionText.enabled = true;
     }
 
@@ -117,6 +117,7 @@ public class HeldItemScript : MonoBehaviour
     }
 
     public void OnTriggerExit2D(Collider2D other) {
+        childSpriteSpr.enabled = false;
         itemActionText.enabled = false;
     }
 
