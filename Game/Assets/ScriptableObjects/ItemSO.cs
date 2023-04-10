@@ -9,4 +9,6 @@ public class ItemSO : ScriptableObject
 {
     public int id = 0;
     public Sprite img;
+    public bool edible;
+    
 }

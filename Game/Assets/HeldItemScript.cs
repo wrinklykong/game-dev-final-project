@@ -13,6 +13,9 @@ public class HeldItemScript : MonoBehaviour
     private float timeClicked;
     private bool canUseItem;
     private int itemHeldDown;
+    private Transform childSpritePos;
+    private SpriteRenderer childSpriteSpr;
+    private Text itemActionText;
 
     public InventorySO playerInventory;
     public SFXAudioScript sfxMixer;
@@ -22,6 +25,9 @@ public class HeldItemScript : MonoBehaviour
         holdingItem = false;
         img = GetComponent<Image>();
         pos = GetComponent<Transform>();
+        childSpritePos = GetComponentsInChildren<Transform>()[1];
+        childSpriteSpr = GetComponentsInChildren<SpriteRenderer>()[0];
+        itemActionText = GetComponentsInChildren<Text>()[0];
         canUseItem = false;
         itemHeldDown = -1;
 
@@ -33,6 +39,8 @@ public class HeldItemScript : MonoBehaviour
         if ( holdingItem ) {
             Vector2 relativePosition = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             pos.position = relativePosition;
+            childSpritePos.position = relativePosition + new Vector2(0,1);
+            itemActionText.transform.position = relativePosition + new Vector2(2,1);
             if ( !canUseItem && Time.time - timeClicked > 0.15 ) {
                 canUseItem = true;
             }
@@ -59,6 +67,7 @@ public class HeldItemScript : MonoBehaviour
             timeClicked = Time.time;
             sfxMixer.playClip("pickUp", "o");
             ip.itemsInventory[itemHeldDown].blankImage();
+            childSpriteSpr.enabled = true;
         }
         else {
             Debug.Log("No item found!");            
@@ -74,5 +83,41 @@ public class HeldItemScript : MonoBehaviour
         sfxMixer.playClip("setDown", "o");
         ip.itemsInventory[itemHeldDown].showImage();
         itemHeldDown = -1;
+        childSpriteSpr.enabled = false;
+        itemActionText.enabled = false;
     }
+
+    public void handleOnPlayer() {
+        // check if the item is edible, if not, DIE!
+        // if ( ip.itemsInventory[itemHeldDown].edible ) {
+        //     Debug.Log("Edible!");
+        //     itemActionText.text = "Eat";
+        // }
+        // else {
+        //     itemActionText.text = "Not edible!";
+        // }
+        itemActionText.text = "Eat!";
+        itemActionText.enabled = true;
+    }
+
+    public void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(other.tag);
+        switch (other.tag) 
+        {
+            case "player":
+                Debug.Log("Eat this item!");
+                handleOnPlayer();
+                break;
+            case "npc":
+                Debug.Log("NPC!");
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D other) {
+        itemActionText.enabled = false;
+    }
+
 }

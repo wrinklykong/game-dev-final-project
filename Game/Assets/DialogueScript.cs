@@ -24,7 +24,12 @@ public class DialogueScript : MonoBehaviour
         //updateBox("Hello!");
     }
 
+    private void destroyDialogueQueue() {
+        DialogueList = new Queue();
+    }
+
     public void initializeDialogue( string[] a ) {
+        destroyDialogueQueue();
         foreach ( string x in a ) {
             DialogueList.Enqueue(x);
         }
