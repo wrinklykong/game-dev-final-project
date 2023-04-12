@@ -52,4 +52,5 @@ public class SFXAudioScript : MonoBehaviour
         }
         sfxSource.PlayOneShot(clipToBePlayed);
     }
+
 }
