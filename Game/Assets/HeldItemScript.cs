@@ -10,12 +10,18 @@ public class HeldItemScript : MonoBehaviour
     private bool holdingItem;
     private Image img;
     private Transform pos;
+
     private float timeClicked;
     private bool canUseItem;
-    private int itemHeldDown;
+
+    private int itemHeldDownPos;
+    private ItemSO itemHeldDown;
     private Transform childSpritePos;
     private SpriteRenderer childSpriteSpr;
     private Text itemActionText;
+
+    private bool isHoveringOverObject;
+    private string objectName;
 
     public InventorySO playerInventory;
     public SFXAudioScript sfxMixer;
@@ -29,7 +35,7 @@ public class HeldItemScript : MonoBehaviour
         childSpriteSpr = GetComponentsInChildren<SpriteRenderer>()[0];
         itemActionText = GetComponentsInChildren<Text>()[0];
         canUseItem = false;
-        itemHeldDown = -1;
+        itemHeldDownPos = -1;
 
         img.enabled = false;
     }
@@ -60,13 +66,14 @@ public class HeldItemScript : MonoBehaviour
             Debug.Log("TODO: Swap held items");
         }
         else if ( playerInventory.objects[itemNum] ) {       // if item exists, grab it
-            itemHeldDown = itemNum;
+            itemHeldDownPos = itemNum;
+            itemHeldDown = playerInventory.objects[itemNum];
             img.enabled = true;
             holdingItem = true;
-            img.sprite = playerInventory.objects[itemHeldDown].img;
+            img.sprite = playerInventory.objects[itemHeldDownPos].img;
             timeClicked = Time.time;
             sfxMixer.playClip("pickUp", "o");
-            ip.itemsInventory[itemHeldDown].blankImage();
+            ip.itemsInventory[itemHeldDownPos].blankImage();
         }
         else {
             Debug.Log("No item found!");            
@@ -75,37 +82,57 @@ public class HeldItemScript : MonoBehaviour
     }
 
     public void releaseItem() {
+        if ( isHoveringOverObject ) {
+            switch (objectName) {
+                case "player":
+                    if ( itemHeldDown.edible ) {
+                        sfxMixer.playClip("eat", "o");
+                        playerInventory.removeItem(itemHeldDownPos);
+                        ip.itemsInventory[itemHeldDownPos].resetImage();
+                        ip.updateInventory();
+                    }
+                    else {
+                        // you cant eat that!
+                        sfxMixer.playClip("setDown", "o");
+                        ip.itemsInventory[itemHeldDownPos].showImage();
+                    }
+                    break;
+                default:
+                    Debug.Log("Default case release");
+                    break;
+            }
+        }
+        else {
+            sfxMixer.playClip("setDown", "o");
+            ip.itemsInventory[itemHeldDownPos].showImage();
+        }
         img.enabled = false;
         holdingItem = false;
         canUseItem = false;
         timeClicked = 0f;
-        sfxMixer.playClip("setDown", "o");
-        ip.itemsInventory[itemHeldDown].showImage();
-        itemHeldDown = -1;
+        itemHeldDownPos = -1;
         childSpriteSpr.enabled = false;
         itemActionText.enabled = false;
     }
 
     public void handleOnPlayer() {
-        // check if the item is edible, if not, DIE!
-        // if ( ip.itemsInventory[itemHeldDown].edible ) {
-        //     Debug.Log("Edible!");
-        //     itemActionText.text = "Eat";
-        // }
-        // else {
-        //     itemActionText.text = "Not edible!";
-        // }
-        itemActionText.text = "Eat!";
+        if ( itemHeldDown.edible ) {
+            itemActionText.text = "Eat!";
+        }
+        else {
+            itemActionText.text = "You cant eat this!";
+        }
         childSpriteSpr.enabled = true;
         itemActionText.enabled = true;
     }
 
     public void OnTriggerEnter2D(Collider2D other) {
         Debug.Log(other.tag);
+        objectName = other.tag;
+        isHoveringOverObject = true;
         switch (other.tag) 
         {
             case "player":
-                Debug.Log("Eat this item!");
                 handleOnPlayer();
                 break;
             case "npc":
@@ -117,6 +144,8 @@ public class HeldItemScript : MonoBehaviour
     }
 
     public void OnTriggerExit2D(Collider2D other) {
+        objectName = "";
+        isHoveringOverObject = false;
         childSpriteSpr.enabled = false;
         itemActionText.enabled = false;
     }

@@ -34,4 +34,8 @@ public class OptionsMenuScript : MonoBehaviour
         cv.enabled = false;
     }
 
+    public void openMenu() {
+        cv.enabled = true;
+    }
+
 }

@@ -13,6 +13,7 @@ public class SFXAudioScript : MonoBehaviour
     public AudioClip pickUp;
     public AudioClip setDown;
     public AudioClip badClick;
+    public AudioClip eat;
 
     public AudioClip errorSFX;
 
@@ -46,10 +47,14 @@ public class SFXAudioScript : MonoBehaviour
             case "badClick":
                 clipToBePlayed = badClick;
                 break;
+            case "eat":
+                clipToBePlayed = eat;
+                break;
             default:
                 clipToBePlayed = errorSFX;
                 break;
         }
+        sfxSource.pitch = Random.Range(0.9f,1.1f);
         sfxSource.PlayOneShot(clipToBePlayed);
     }
 
