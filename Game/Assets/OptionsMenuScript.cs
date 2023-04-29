@@ -10,6 +10,8 @@ public class OptionsMenuScript : MonoBehaviour
     private Canvas cv;
 
     public AudioMixer mixer;
+    public SFXAudioScript audios;
+    public AudioSource audioss;
 
     void Start() {
         this.enabled = true;
@@ -28,6 +30,17 @@ public class OptionsMenuScript : MonoBehaviour
 
     public void setSFXVolume() {
         SetVolume("SFX", sliders[0].value);
+        if ( !audioss.isPlaying ) {
+            audios.playClip("item","o");
+        } 
+    }
+
+    public void setMusicVolume() {
+        SetVolume("Music", sliders[1].value);
+    }
+
+    public void setMasterVolume() {
+        SetVolume("Master", sliders[2].value);
     }
 
     public void closeMenu() {

@@ -54,7 +54,6 @@ public class SFXAudioScript : MonoBehaviour
                 clipToBePlayed = errorSFX;
                 break;
         }
-        sfxSource.pitch = Random.Range(0.9f,1.1f);
         sfxSource.PlayOneShot(clipToBePlayed);
     }
 

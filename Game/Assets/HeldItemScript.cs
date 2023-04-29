@@ -127,7 +127,6 @@ public class HeldItemScript : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(other.tag);
         objectName = other.tag;
         isHoveringOverObject = true;
         switch (other.tag) 

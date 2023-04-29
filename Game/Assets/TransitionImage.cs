@@ -16,7 +16,7 @@ public class TransitionImage : MonoBehaviour
         FadeIn();
     }
 
-    IEnumerator FadeIn() {
+    void FadeIn() {
         // enable the image
         img.enabled = true;
 
@@ -29,10 +29,10 @@ public class TransitionImage : MonoBehaviour
                 img.color = new Color(0,0,0,Mathf.Lerp(1, 0, timer/fadeInTime));
             }
         }
-        return null;
+        return;
     }
 
-    public IEnumerator FadeOut() {
+    public void FadeOut() {
         // enable the image
         img.enabled = true;
         StartCoroutine(FadeOutRoutine());
@@ -47,6 +47,6 @@ public class TransitionImage : MonoBehaviour
         }
         // TO-DO: Fix thhis transition, no exiting transition happens :,
         SceneManager.LoadScene("HouseScene", LoadSceneMode.Single);
-        return null;
+        return;
     }
 }
