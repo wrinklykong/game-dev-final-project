@@ -19,8 +19,16 @@ public class SFXAudioScript : Singleton
 
     private AudioSource sfxSource;
 
+    public static Singleton sfx { get; private set; }
+
     private void Awake() {
         DontDestroyOnLoad(gameObject);
+        if ( sfx != null && sfx != this ) {
+            Destroy(this);
+        }
+        else {
+            sfx = this;
+        }
     }
 
     void Start() {

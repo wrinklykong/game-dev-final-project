@@ -12,10 +12,16 @@ public class MusicAudioScript : Singleton
 
     private AudioSource musicSource;
 
-    void Awake() {
+    public static Singleton music { get; private set; }
+
+    private void Awake() {
         DontDestroyOnLoad(gameObject);
-        musicSource = GetComponent<AudioSource>();
-        playClip("test", "o");
+        if ( music != null && music != this ) {
+            Destroy(this);
+        }
+        else {
+            music = this;
+        }
     }
 
     public void playClip(string musicname, string args) {

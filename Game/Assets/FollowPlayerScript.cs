@@ -7,6 +7,18 @@ public class FollowPlayerScript : MonoBehaviour
     public Transform player;
     public Vector3 offset;
 
+    public static FollowPlayerScript instance { get; private set; }
+
+    private void Awake() {
+        DontDestroyOnLoad(gameObject);
+        if ( instance != null && instance != this ) {
+            Destroy(this);
+        }
+        else {
+            instance = this;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

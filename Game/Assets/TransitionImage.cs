@@ -10,15 +10,25 @@ public class TransitionImage : MonoBehaviour
     public float fadeInTime = 2;
     // Start is called before the first frame update
 
-    void Start()
-    {
+    public static TransitionImage instance { get; private set; }
+
+    private void Awake() {
+        DontDestroyOnLoad(this.gameObject);
+        if ( instance != null && instance != this ) {
+            Destroy(this);
+        }
+        else {
+            instance = this;
+        }
         img = GetComponent<Image>();
-        FadeIn();
+        //FadeIn();
     }
 
-    void FadeIn() {
+    public void FadeIn() {
+        Debug.Log("Fading in...");
         // enable the image
         img.enabled = true;
+        //img.color = new Color(0,0,0,0);
 
         StartCoroutine(FadeInRoutine());
         IEnumerator FadeInRoutine(){
@@ -27,6 +37,7 @@ public class TransitionImage : MonoBehaviour
                 yield return null;
                 timer+=Time.deltaTime;
                 img.color = new Color(0,0,0,Mathf.Lerp(1, 0, timer/fadeInTime));
+                //Debug.Log("im fadoooing omg...");
             }
         }
         return;
@@ -34,6 +45,8 @@ public class TransitionImage : MonoBehaviour
 
     public void FadeOut() {
         // enable the image
+        
+        Debug.Log("Fading out...");
         img.enabled = true;
         StartCoroutine(FadeOutRoutine());
         IEnumerator FadeOutRoutine(){
@@ -42,11 +55,9 @@ public class TransitionImage : MonoBehaviour
                 yield return null;
                 timer+=Time.deltaTime;
                 img.color = new Color(0,0,0,Mathf.Lerp(0, 1, timer/fadeInTime));
-                Debug.Log("Hey guyz :3");
             }
+            SceneManager.LoadScene("HouseScene", LoadSceneMode.Single);
         }
-        // TO-DO: Fix thhis transition, no exiting transition happens :,
-        SceneManager.LoadScene("HouseScene", LoadSceneMode.Single);
         return;
     }
 }
