@@ -49,10 +49,10 @@ public class CollisionTriggers : MonoBehaviour
                 Debug.Log("ERROR: NO item found :,(");
             }
         }
-        else if ( other.CompareTag("door")) {
+        else if ( other.CompareTag("doorToShop") || other.CompareTag("doorToCity") ) {
             // Debug.Log("Touching door!");
             mixer.playClip("door", "o");
-            transition.FadeOut();
+            transition.FadeOut(other.tag);       // more like, switch scenes
         }
         else if ( other.CompareTag("npc") ) {
             Debug.Log("Touching NPC!");

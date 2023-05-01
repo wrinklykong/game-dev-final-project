@@ -43,7 +43,7 @@ public class TransitionImage : MonoBehaviour
         return;
     }
 
-    public void FadeOut() {
+    public void FadeOut(string scene) {
         // enable the image
         
         Debug.Log("Fading out...");
@@ -56,7 +56,17 @@ public class TransitionImage : MonoBehaviour
                 timer+=Time.deltaTime;
                 img.color = new Color(0,0,0,Mathf.Lerp(0, 1, timer/fadeInTime));
             }
-            SceneManager.LoadScene("HouseScene", LoadSceneMode.Single);
+            switch (scene) {
+                case "doorToShop":
+                    SceneManager.LoadScene("HouseScene", LoadSceneMode.Single);
+                    break;
+                case "doorToCity":
+                    SceneManager.LoadScene("CityScene", LoadSceneMode.Single);
+                    break;
+                default:
+                    Debug.Log("Unknown scene :,(");
+                    break;
+            }
         }
         return;
     }

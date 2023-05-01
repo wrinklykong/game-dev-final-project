@@ -8,6 +8,8 @@ TagManager:
   - item
   - npc
   - player
+  - doorToCity
+  - doorToShop
   layers:
   - Default
   - TransparentFX

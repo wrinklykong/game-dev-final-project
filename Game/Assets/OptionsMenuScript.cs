@@ -49,6 +49,11 @@ public class OptionsMenuScript : MonoBehaviour
 
     public void openMenu() {
         cv.enabled = true;
+        Text[] allTexts = this.GetComponentsInChildren<Text>();
+        foreach ( Text a in allTexts ) {
+            Debug.Log(a.color.a);
+            a.color = new Color(1,1,1,1);
+        }
     }
 
 }

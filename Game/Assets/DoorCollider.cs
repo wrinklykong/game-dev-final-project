@@ -8,11 +8,11 @@ public class DoorCollider : MonoBehaviour
 
     public TransitionImage transition;
 
-    void OnTriggerEnter2D(Collider2D collision) {
+    // void OnTriggerEnter2D(Collider2D collision) {
 
-        if ( collision.CompareTag("door")) {
-            Debug.Log("Touching door!");
-            transition.FadeOut();
-        }
-    }
+    //     if ( collision.CompareTag("door")) {
+    //         Debug.Log("Touching door!");
+    //         transition.FadeOut();
+    //     }
+    // }
 }
