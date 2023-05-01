@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SFXAudioScript : MonoBehaviour
+public class SFXAudioScript : Singleton
 {
 
     [Header("Audio Clips")]
@@ -18,6 +18,10 @@ public class SFXAudioScript : MonoBehaviour
     public AudioClip errorSFX;
 
     private AudioSource sfxSource;
+
+    private void Awake() {
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start() {
         sfxSource = GetComponent<AudioSource>();

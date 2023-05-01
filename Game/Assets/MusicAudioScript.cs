@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicAudioScript : MonoBehaviour
+public class MusicAudioScript : Singleton
 {
 
     [Header("Audio Clips")]
@@ -13,6 +13,7 @@ public class MusicAudioScript : MonoBehaviour
     private AudioSource musicSource;
 
     void Awake() {
+        DontDestroyOnLoad(gameObject);
         musicSource = GetComponent<AudioSource>();
         playClip("test", "o");
     }
