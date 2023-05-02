@@ -26,5 +26,14 @@ MonoBehaviour:
   - END
   - OPT2
   - I like hotdog more .
+  - OPTION
+  - Yes
+  - No
+  - Do you like Me? Teehee
+  - OPT1
+  - WHAAATT?? NOOOO
+  - END
+  - OPT2
+  - OPT2
   - END
   npcSprite: {fileID: 21300000, guid: cbd2574bd7fc3414eb898bc5fdfb912f, type: 3}

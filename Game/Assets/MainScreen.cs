@@ -8,7 +8,7 @@ public class MainScreen : MonoBehaviour
 
     public void startGame() {
         Debug.Log("Clicked start game!");
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("LoadThingsScene", LoadSceneMode.Single);
     }
 
 }

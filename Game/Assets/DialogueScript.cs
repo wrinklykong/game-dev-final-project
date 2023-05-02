@@ -141,8 +141,6 @@ public class DialogueScript : MonoBehaviour
     public void OptionClicked(int option) {
         // option = 1 or 2
         string optType = (option==1) ? "OPT1" : "OPT2";
-        Debug.Log(optType);
-        Debug.Log("Option 1 clicked");
         // go until option 1
         hideOptions();
         string nextD = (string)DialogueList.Dequeue();

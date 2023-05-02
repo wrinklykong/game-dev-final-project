@@ -23,12 +23,12 @@ public class SFXAudioScript : MonoBehaviour
     public static SFXAudioScript instance { get; private set; }
 
     private void Awake() {
-        DontDestroyOnLoad(gameObject);
         if ( instance ) {
             Destroy(this);
         }
         else {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 

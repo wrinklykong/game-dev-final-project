@@ -13,6 +13,7 @@ TagManager:
   - doorToDock
   - option1
   - option2
+  - doorToCityHouse1
   layers:
   - Default
   - TransparentFX

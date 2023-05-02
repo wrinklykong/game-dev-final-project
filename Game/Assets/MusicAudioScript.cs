@@ -12,15 +12,15 @@ public class MusicAudioScript : Singleton
 
     private AudioSource musicSource;
 
-    public static Singleton music { get; private set; }
+    public static MusicAudioScript instance { get; private set; }
 
     private void Awake() {
-        DontDestroyOnLoad(gameObject);
-        if ( music != null && music != this ) {
+        if ( instance != null && instance != this ) {
             Destroy(this);
         }
         else {
-            music = this;
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
+    public static GameManagerScript instance { get; private set; }
 
     void Awake() {
         DontDestroyOnLoad(this.gameObject);

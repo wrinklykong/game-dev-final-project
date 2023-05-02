@@ -9,12 +9,12 @@ public class SingletonPlayer : MonoBehaviour
     private Transform playerTransform;
 
     private void Awake() {
-        DontDestroyOnLoad(gameObject);
         if ( instance ) {
             Destroy(this);
         }
         else {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         playerTransform = instance.GetComponentsInChildren<Transform>()[1];
     }
