@@ -10,13 +10,13 @@ public class FollowPlayerScript : MonoBehaviour
     public static FollowPlayerScript instance { get; private set; }
 
     private void Awake() {
-        DontDestroyOnLoad(gameObject);
         if ( instance != null && instance != this ) {
             Destroy(this);
         }
         else {
             instance = this;
         }
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame

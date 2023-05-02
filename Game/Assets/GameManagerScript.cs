@@ -20,7 +20,7 @@ public class GameManagerScript : MonoBehaviour
     }
 
     void ChangedActiveScene(Scene current, Scene next) {
-        //Debug.Log("OnSceneLoaded: "+scene.name);
+        Debug.Log("OnSceneLoaded: "+next.name);
         string currentName = current.name;
 
         if ( currentName == null ) {
@@ -34,5 +34,6 @@ public class GameManagerScript : MonoBehaviour
             default:
                 break;
         }
+        TransitionImage.instance.FadeIn();
     }
 }

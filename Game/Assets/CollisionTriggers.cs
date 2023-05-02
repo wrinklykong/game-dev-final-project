@@ -49,7 +49,7 @@ public class CollisionTriggers : MonoBehaviour
                 Debug.Log("ERROR: NO item found :,(");
             }
         }
-        else if ( other.CompareTag("doorToShop") || other.CompareTag("doorToCity") ) {
+        else if ( other.tag.Length > 3 && other.tag.Substring(0,4) == "door" ) {
             // Debug.Log("Touching door!");
             mixer.playClip("door", "o");
             transition.FadeOut(other.tag);       // more like, switch scenes

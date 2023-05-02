@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SFXAudioScript : Singleton
+public class SFXAudioScript : MonoBehaviour
 {
 
     [Header("Audio Clips")]
@@ -14,20 +14,21 @@ public class SFXAudioScript : Singleton
     public AudioClip setDown;
     public AudioClip badClick;
     public AudioClip eat;
+    public AudioClip walking;
 
     public AudioClip errorSFX;
 
-    private AudioSource sfxSource;
+    public AudioSource sfxSource;
 
-    public static Singleton sfx { get; private set; }
+    public static SFXAudioScript instance { get; private set; }
 
     private void Awake() {
         DontDestroyOnLoad(gameObject);
-        if ( sfx != null && sfx != this ) {
+        if ( instance ) {
             Destroy(this);
         }
         else {
-            sfx = this;
+            instance = this;
         }
     }
 
@@ -61,6 +62,9 @@ public class SFXAudioScript : Singleton
                 break;
             case "eat":
                 clipToBePlayed = eat;
+                break;
+            case "walk":
+                clipToBePlayed = walking;
                 break;
             default:
                 clipToBePlayed = errorSFX;

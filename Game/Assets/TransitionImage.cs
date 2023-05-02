@@ -63,6 +63,9 @@ public class TransitionImage : MonoBehaviour
                 case "doorToCity":
                     SceneManager.LoadScene("CityScene", LoadSceneMode.Single);
                     break;
+                case "doorToDock":
+                    SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+                    break;
                 default:
                     Debug.Log("Unknown scene :,(");
                     break;

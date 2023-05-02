@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+// https://www.youtube.com/watch?v=9yFnaLD0PLI&ab_channel=THSSTech
 public class CharacterMovement : MonoBehaviour
 {
 
     public float speed;
-    public Rigidbody2D rb2d;
-    public bool talkingToNPC;
+    private Rigidbody2D rb2d;
+    private bool talkingToNPC;
+    private SpriteRenderer sr;
+    private Animator anim;
 
-    [Header("Scriptable Objects")]
-    public ItemSO newItem;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,8 @@ public class CharacterMovement : MonoBehaviour
         speed = 3.0f;
         rb2d = GetComponent<Rigidbody2D>();
         talkingToNPC = false;
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     public void startTalkingToNPC() {
@@ -37,6 +39,23 @@ public class CharacterMovement : MonoBehaviour
             float moveHorizontal = Input.GetAxis ("Horizontal");
             float moveVertical = Input.GetAxis ("Vertical");
             rb2d.velocity = new Vector2(speed * moveHorizontal, speed * moveVertical);
+            if ( moveHorizontal == 0 ) {
+                anim.Play("Idle");
+            }
+            else {
+                if ( moveHorizontal < 0 ) {
+                    sr.flipX = true;
+                }
+                else {
+                    sr.flipX = false;
+                }
+                if ( !anim.GetCurrentAnimatorStateInfo(0).IsName("Walking") ) {
+                    anim.Play("Walking");
+                }
+                else if (!SFXAudioScript.instance.sfxSource.isPlaying) {
+                    SFXAudioScript.instance.playClip("walk", "o");
+                }
+            }
         }
 
     }
