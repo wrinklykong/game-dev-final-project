@@ -13,12 +13,12 @@ public class TransitionImage : MonoBehaviour
     public static TransitionImage instance { get; private set; }
 
     private void Awake() {
-        DontDestroyOnLoad(this.gameObject);
         if ( instance != null && instance != this ) {
             Destroy(this);
         }
         else {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         img = GetComponent<Image>();
         //FadeIn();

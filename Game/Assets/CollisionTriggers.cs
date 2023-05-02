@@ -26,7 +26,7 @@ public class CollisionTriggers : MonoBehaviour
     public void Update() {
         if ( touchingNPC && Input.GetKeyDown("space") ) {
             // Debug.Log("Touching NPC and Spacebar pressed");
-            dialogueContainer.initializeDialogue(currentCollision.gameObject.GetComponent<NPCScript>().getDialogueList());
+            dialogueContainer.initializeDialogue(currentCollision.gameObject.GetComponent<NPCScript>().getDialogueList());  // DISGUSTING!
         }
     }
 
@@ -34,7 +34,6 @@ public class CollisionTriggers : MonoBehaviour
         if ( other.tag == "item" ) {
             // Debug.Log("Item touched!");
             ItemSO itemTouched = other.gameObject.GetComponent<Container>().item;
-            Debug.Log(itemTouched);
             if (itemTouched) {
                 if ( inventory.addItem(itemTouched) != -1 ) {
                     panel.updateInventory();

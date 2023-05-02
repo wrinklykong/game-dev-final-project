@@ -14,6 +14,7 @@ public class DialogueScript : MonoBehaviour
 
     private GameObject option1;
     private GameObject option2;
+    private GameObject nextButtonObject;
 
     private Button option1button;
     private Button option2button;
@@ -21,6 +22,10 @@ public class DialogueScript : MonoBehaviour
     private Image option2image;
     private Text option1text;
     private Text option2text;
+
+    private Button nextButton;
+    private Image nextButtonImage;
+    private Text nextButtonText;
 
     public CharacterMovement cm;
 
@@ -34,15 +39,20 @@ public class DialogueScript : MonoBehaviour
 
         option1 = GameObject.FindGameObjectsWithTag("option1")[0];
         option2 = GameObject.FindGameObjectsWithTag("option2")[0];
+        nextButtonObject = GameObject.FindGameObjectsWithTag("nextButton")[0];
         option1button = option1.GetComponentInChildren<Button>();
         option2button = option2.GetComponentInChildren<Button>();
+        nextButton = nextButtonObject.GetComponentInChildren<Button>();
 
         option1image = option1.GetComponentInChildren<Image>();
-        option2image = option2.GetComponentInChildren<Image>();
+        option2image = option2.GetComponentInChildren<Image>();        
+        nextButtonImage = nextButtonObject.GetComponentInChildren<Image>();
 
         option1text = option1.GetComponentInChildren<Text>();
         option2text = option2.GetComponentInChildren<Text>();
+        nextButtonText = nextButtonObject.GetComponentInChildren<Text>();
     }
+
 
     public void hideOptions() {
         option1button.enabled = false;
@@ -51,6 +61,10 @@ public class DialogueScript : MonoBehaviour
         option2image.enabled = false;
         option1text.enabled = false;
         option2text.enabled = false;
+        // show next button
+        nextButton.enabled = true;
+        nextButtonImage.enabled = true;
+        nextButtonText.enabled = true;
     }
 
     private void showOptions() {
@@ -60,6 +74,10 @@ public class DialogueScript : MonoBehaviour
         option2image.enabled = true;
         option1text.enabled = true;
         option2text.enabled = true;
+        // hide next button
+        nextButton.enabled = false;
+        nextButtonImage.enabled = false;
+        nextButtonText.enabled = false;
     }
 
     private void destroyDialogueQueue() {
@@ -75,7 +93,6 @@ public class DialogueScript : MonoBehaviour
     }
 
     public void nextDialogue() {
-        Debug.Log("Hello");
         try {
             string nextD = (string)DialogueList.Dequeue();
             if ( nextD == "OPTION" ) {
@@ -109,7 +126,7 @@ public class DialogueScript : MonoBehaviour
             }
         }
         catch (Exception e) {
-            //Debug.Log(e);
+            Debug.Log(e);
             updateBox("NULL");
             hideBox();
             cm.stopTalkingToNPC();

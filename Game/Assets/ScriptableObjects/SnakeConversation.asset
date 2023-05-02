@@ -16,5 +16,5 @@ MonoBehaviour:
   dialogue:
   - Hey.
   - Welcome to my shop.
-  - EOF
+  - END
   npcSprite: {fileID: 0}

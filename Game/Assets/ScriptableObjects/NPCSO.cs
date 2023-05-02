@@ -7,6 +7,7 @@ using UnityEngine;
 public class NPCSO : ScriptableObject
 {
     public string npcName;
-    public string[] dialogue;
+    public string[] dialogue;           // Initial dialogue that comes up
     public Sprite npcSprite;
+    
 }

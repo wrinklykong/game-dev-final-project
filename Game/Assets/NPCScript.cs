@@ -26,4 +26,13 @@ public class NPCScript : MonoBehaviour
     public string[] getDialogueList() {
         return dialogueList;
     }
+
+    public void testScript() {
+        Debug.Log("Hello!");
+    }
+
+    public bool handleItemGiven(ItemSO itemGiven) {
+        Debug.Log(itemGiven.id);
+        return true;
+    }
 }
