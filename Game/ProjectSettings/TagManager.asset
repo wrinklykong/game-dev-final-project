@@ -11,6 +11,8 @@ TagManager:
   - doorToCity
   - doorToShop
   - doorToDock
+  - option1
+  - option2
   layers:
   - Default
   - TransparentFX

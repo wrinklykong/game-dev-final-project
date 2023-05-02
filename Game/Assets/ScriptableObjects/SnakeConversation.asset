@@ -10,21 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b86c62d2f8dad4898d0d949242f60f, type: 3}
-  m_Name: NPC
+  m_Name: SnakeConversation
   m_EditorClassIdentifier: 
-  npcName: Johanness Gutenberg
+  npcName: Snake
   dialogue:
-  - Hey there! Welcome to my cool awesome world.
-  - Please let me know if you need anything.
-  - Take care!
-  - OPTION
-  - Hotdog
-  - Pizza
-  - U wan hotdgo or piza lol
-  - OPT1
-  - I like pizza more. Fucky ou
-  - END
-  - OPT2
-  - I like hotdog more .
-  - END
-  npcSprite: {fileID: 21300000, guid: cbd2574bd7fc3414eb898bc5fdfb912f, type: 3}
+  - Hey.
+  - Welcome to my shop.
+  - EOF
+  npcSprite: {fileID: 0}
