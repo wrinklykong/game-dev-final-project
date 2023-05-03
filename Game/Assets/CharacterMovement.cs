@@ -7,6 +7,8 @@ public class CharacterMovement : MonoBehaviour
 {
 
     public float speed;
+    public SFXAudioScript sfxAS;
+
     private Rigidbody2D rb2d;
     private bool talkingToNPC;
     private SpriteRenderer sr;
@@ -52,7 +54,7 @@ public class CharacterMovement : MonoBehaviour
                 if ( !anim.GetCurrentAnimatorStateInfo(0).IsName("Walking") ) {
                     anim.Play("Walking");
                 }
-                else if (!SFXAudioScript.instance.sfxSource.isPlaying) {
+                else if (!sfxAS.sfxSource.isPlaying) {
                     SFXAudioScript.instance.playClip("walk", "o");
                 }
             }

@@ -886,6 +886,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 301852874}
     - target: {fileID: 7698900020108105118, guid: 77368e8a92de9b94f8017b571f7afcaa, type: 3}
+      propertyPath: sfxAS
+      value: 
+      objectReference: {fileID: 1183920247}
+    - target: {fileID: 7698900020108105118, guid: 77368e8a92de9b94f8017b571f7afcaa, type: 3}
       propertyPath: newItem
       value: 
       objectReference: {fileID: 11400000, guid: 8ceae5cba4ecbae4ea472b90c832a730, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b86c62d2f8dad4898d0d949242f60f, type: 3}
+  m_Name: CemetaryGuy
+  m_EditorClassIdentifier: 
+  npcName: 
+  dialogue:
+  - Hey kid, what are YOU doing around here?
+  - OPTION
+  - I dont know
+  - I'm sorry?
+  - OPT1
+  - Don't play dumb kid, you know what you're doing here.
+  - This is a HIGHLY restricted area, NO visitors.
+  - If you don't have a pass, then BEAT it, OKAY?
+  - END
+  - OPT2
+  - I dont have time for this, so SCRAM.
+  - END
+  npcSprite: {fileID: 0}
