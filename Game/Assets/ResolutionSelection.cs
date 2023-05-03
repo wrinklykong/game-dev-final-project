@@ -10,6 +10,9 @@ public class ResolutionSelection : MonoBehaviour
 
     private Resolution[] resolutions;
 
+    public RectTransform uiCanvas;
+    public RectTransform inventoryCanvas;
+
     void Start() {
         resolutions = Screen.resolutions;
         isFullScreen.isOn = Screen.fullScreen;
@@ -25,5 +28,7 @@ public class ResolutionSelection : MonoBehaviour
 
     public void SetResolution() {
         Screen.SetResolution(resolutions[resolutionDropdown.value].width,resolutions[resolutionDropdown.value].height, isFullScreen.isOn);
+        uiCanvas.rect.Set(0,0,resolutions[resolutionDropdown.value].width / 160f, resolutions[resolutionDropdown.value].height / 160f);
+        inventoryCanvas.rect.Set(0,0,resolutions[resolutionDropdown.value].width / 160f, resolutions[resolutionDropdown.value].height / 160f);
     }
 }

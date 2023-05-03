@@ -27,6 +27,11 @@ public class DialogueScript : MonoBehaviour
     private Image nextButtonImage;
     private Text nextButtonText;
 
+    private ItemSO itemToGive;
+    public InventorySO inventory;
+    public InventoryPanel panel;
+    public SFXAudioScript mixer;
+
     public CharacterMovement cm;
 
     public static DialogueScript instance { get; private set; }
@@ -96,12 +101,18 @@ public class DialogueScript : MonoBehaviour
         DialogueList = new Queue();
     }
 
-    public void initializeDialogue( string[] a ) {
+    public void initializeDialogue( string[] a, ItemSO its ) {
         destroyDialogueQueue();
         foreach ( string x in a ) {
             DialogueList.Enqueue(x);
         }
         nextDialogue();
+        setItemToGive( its );
+        
+    }
+
+    public void setItemToGive( ItemSO its ) {
+        itemToGive = its;
     }
 
     public void nextDialogue() {
@@ -132,9 +143,11 @@ public class DialogueScript : MonoBehaviour
                 return;
             }
             else if ( nextD == "GIVE" ) {
-                int itemNum = int.Parse((string)DialogueList.Dequeue());
-                Debug.Log(itemNum);
-                // give item number itemNum
+                // give itemToGive
+                inventory.addItem(itemToGive);
+                panel.updateInventory();
+                mixer.playClip("item", "o");
+                // do the thing
             }
             else {
                 updateBox(nextD);

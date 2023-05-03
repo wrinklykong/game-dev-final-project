@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b86c62d2f8dad4898d0d949242f60f, type: 3}
+  m_Name: FirstSign
+  m_EditorClassIdentifier: 
+  npcName: Sign
+  dialogue:
+  - Hello! I am a sign.
+  - Welcome to Port Disland, "YOU'LL LOVE THE FISHIES"; Population 2.
+  - Use WASD to move around.
+  - When the ! appears over your head, press space to interact.
+  - Clicking the button on your bottom right opens your inventory.
+  - Here you can access your inventory and use items.
+  - You can drag items onto the environment by clicking once on the item in your
+    inventory and clicking once to drop.
+  - Try it out! Give this arrow to me.
+  - GIVE
+  npcSprite: {fileID: -1897461097, guid: 8fb34d6aae9da194ca1840f6b81a78d6, type: 3}
+  itemNeeded: 1
+  reactionToItemGiven:
+  - Good job! That ends the tutorial
+  - Have fun!
+  dialogueAfterItemGiven:
+  - OPTION
+  - No
+  - Yes
+  - Do you want me to repeat?
+  - OPT1
+  - OK!
+  - END
+  - OPT2
+  - Use WASD to move around.
+  - When the ! appears over your head, press space to interact.
+  - Clicking the button on your bottom right opens your inventory.
+  - You can drag items onto the environment by clicking once on the item in your
+    inventory and clicking once to drop.
+  - END
+  unknownItemGiven:
+  - I am a sign! I have no pockets!
+  itemGivenToPlayer: {fileID: 11400000, guid: a6137b2157d188b43a1878da464916c4, type: 2}

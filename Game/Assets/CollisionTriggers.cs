@@ -26,7 +26,7 @@ public class CollisionTriggers : MonoBehaviour
     public void Update() {
         if ( touchingNPC && Input.GetKeyDown("space") ) {
             // Debug.Log("Touching NPC and Spacebar pressed");
-            dialogueContainer.initializeDialogue(currentCollision.gameObject.GetComponent<NPCScript>().getDialogueList());  // DISGUSTING!
+            dialogueContainer.initializeDialogue(currentCollision.gameObject.GetComponent<NPCScript>().getDialogueList(), currentCollision.gameObject.GetComponent<NPCScript>().getItemToGive());      // DISGUSTING!
         }
     }
 
@@ -38,7 +38,7 @@ public class CollisionTriggers : MonoBehaviour
                 if ( inventory.addItem(itemTouched) != -1 ) {
                     panel.updateInventory();
                     Destroy(other.gameObject);
-                    mixer.playClip("item", "o");
+                    SFXAudioScript.instance.playClip("item", "o");
                 }
                 else {
                     // message above item that says your inventory is full

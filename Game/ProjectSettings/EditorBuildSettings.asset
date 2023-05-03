@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CemetaryScene.unity
     guid: 2cdecaf14efd29643b051e4740b5a859
+  - enabled: 1
+    path: Assets/Scenes/HousePrefab.unity
+    guid: 61a9afa051b81b44a8d4c934134f4392
   m_configObjects: {}

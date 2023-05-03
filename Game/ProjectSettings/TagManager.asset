@@ -18,6 +18,7 @@ TagManager:
   - doorToCemetary
   - top
   - bottom
+  - water
   layers:
   - Default
   - TransparentFX

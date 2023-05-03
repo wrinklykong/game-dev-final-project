@@ -47,7 +47,7 @@ public class GameManagerScript : MonoBehaviour
                     SingletonPlayer.instance.changePos(3.7f,7.5f);
                 }
                 else if ( lastScene == "CityScene" ) {
-                    SingletonPlayer.instance.changePos(14.5f,7.25f); // need to change
+                    SingletonPlayer.instance.changePos(14f,9.25f); // need to change
                 }
                 break;
             case "CityScene":
@@ -57,6 +57,12 @@ public class GameManagerScript : MonoBehaviour
                 else if ( lastScene == "SampleScene" ) {
                     SingletonPlayer.instance.changePos(-3.5f,2f);
                 }
+                else if ( lastScene == "HousePrefab" ) {
+                    SingletonPlayer.instance.changePos(6.9f,11.6f);
+                }
+                break;
+            case "HousePrefab":
+                SingletonPlayer.instance.changePos(4.15f,-2.5f);  // for some reason, need to add like +3 on Y for it to proplery work, idk why
                 break;
             case "CemetaryScene":
                 SingletonPlayer.instance.changePos(3f, 0f);

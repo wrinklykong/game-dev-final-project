@@ -21,19 +21,23 @@ public class NPCSO : ScriptableObject
     public bool handleItemGiven( int item ) {
         if ( item == itemNeeded ) {
             // load in the reactionToItemGiven string to the dialogue box
-            DialogueScript.instance.initializeDialogue( reactionToItemGiven );
+            DialogueScript.instance.initializeDialogue( reactionToItemGiven, null );
             itemGiven = true;
             return true;
         }
         else {
             /// load in the unknwon item given into the dialogue box
-            DialogueScript.instance.initializeDialogue( unknownItemGiven );
+            DialogueScript.instance.initializeDialogue( unknownItemGiven, null );
             return false;
         }
     }
 
     public string[] getDialogueForBox() {
         return itemGiven ? dialogueAfterItemGiven : dialogue;       // dunno if works lol
+    }
+
+    public ItemSO getItemToGiveSO() {
+        return itemGivenToPlayer;
     }
     
 }

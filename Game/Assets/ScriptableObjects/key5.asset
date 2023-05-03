@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a2f66d805adf824e8eec75e20294ccc, type: 3}
-  m_Name: ScriptableObjects
+  m_Name: key5
   m_EditorClassIdentifier: 
-  id: 1
-  img: {fileID: 21300000, guid: 80a1ea37a84a06d4bab257f4f45ba4e6, type: 3}
+  id: 5
+  img: {fileID: 21300000, guid: 92069cadc5efdb2469132ac6d48ad50f, type: 3}
+  edible: 0

@@ -34,4 +34,8 @@ public class NPCScript : MonoBehaviour
     public bool handleItemGiven(ItemSO itemGiven) {
         return npcObject.handleItemGiven(itemGiven.id);
     }
+
+    public ItemSO getItemToGive() {
+        return npcObject.getItemToGiveSO();
+    }
 }

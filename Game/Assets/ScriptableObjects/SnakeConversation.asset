@@ -14,12 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Snake
   dialogue:
-  - Hey.
-  - Welcome to my shop.
+  - OPTION
+  - No
+  - What is this place?
+  - Hey there, welcome to my shop. Do you need anything?
+  - OPT1
+  - Alright pardner.
   - END
+  - OPT2
+  - Disland? Disland is a funny place.
+  - I have been caring to these here docks for years and I have seen many-a-strange.
+  - Actually, I've been here my whole life. I was CURSED by this FOUL beast.
+  - This foul beast locked me in this here shop behind this table that has NO DOOR
+    OUT.
+  - And now the beast is dead, so I am forever shackled here.
+  - The only way to cure my disease is with the beautiful, crisp, water found in
+    town.
+  - Bring me some and I will make it worth your while.
   npcSprite: {fileID: 0}
   itemNeeded: 0
-  reactionToItemGiven: []
-  dialogueAfterItemGiven: []
+  reactionToItemGiven:
+  - OOOohhHHH THANK YOU!!!!
+  - I am FREE! I am FREE!
+  - Take this please, complementary! (Its from my discount section!)
+  - GIVE
+  dialogueAfterItemGiven:
+  - I am free!
   unknownItemGiven:
-  - 
+  - What is this?
+  itemGivenToPlayer: {fileID: 11400000, guid: 18d509386d8ebe54e9cc87610311f6e4, type: 2}
