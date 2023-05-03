@@ -16,6 +16,8 @@ TagManager:
   - doorToCityHouse1
   - nextButton
   - doorToCemetary
+  - top
+  - bottom
   layers:
   - Default
   - TransparentFX

@@ -41,9 +41,11 @@ MonoBehaviour:
   reactionToItemGiven:
   - OMG THANK YOU FORT HIS I LUVVV U
   - Here, take this.
-  - GIVE 4
+  - GIVE
+  - 4
   - END
   dialogueAfterItemGiven:
   - Go forth my loved one!
   unknownItemGiven:
   - What is this?
+  itemGivenToPlayer: {fileID: 0}

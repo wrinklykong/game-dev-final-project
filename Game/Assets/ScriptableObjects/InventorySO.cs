@@ -33,6 +33,7 @@ public class InventorySO : ScriptableObject
         for ( i = 0; i < inventorySize; i++ ) {
             if ( !objects[i] ) {
                 objects[i] = item;
+                ShowItemWhenGivenScript.instance.showItemWhenGiven(item);
                 return i;
             }
         }
