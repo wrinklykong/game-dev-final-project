@@ -24,7 +24,7 @@ public class NPCScript : MonoBehaviour
     }
 
     public string[] getDialogueList() {
-        return dialogueList;
+        return npcObject.getDialogueForBox();
     }
 
     public void testScript() {
@@ -32,7 +32,6 @@ public class NPCScript : MonoBehaviour
     }
 
     public bool handleItemGiven(ItemSO itemGiven) {
-        Debug.Log(itemGiven.id);
-        return true;
+        return npcObject.handleItemGiven(itemGiven.id);
     }
 }

@@ -29,6 +29,18 @@ public class DialogueScript : MonoBehaviour
 
     public CharacterMovement cm;
 
+    public static DialogueScript instance { get; private set; }
+
+    void Awake() {
+        if ( instance != null && instance != this ) {
+            Destroy(this);
+        }
+        else {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     void Start()
     {
         DialogueList = new Queue();
@@ -118,6 +130,11 @@ public class DialogueScript : MonoBehaviour
                 cm.stopTalkingToNPC();
                 inventoryCanvas.enabled = true;
                 return;
+            }
+            else if ( nextD == "GIVE" ) {
+                int itemNum = int.Parse((string)DialogueList.Dequeue());
+                Debug.Log(itemNum);
+                // give item number itemNum
             }
             else {
                 updateBox(nextD);

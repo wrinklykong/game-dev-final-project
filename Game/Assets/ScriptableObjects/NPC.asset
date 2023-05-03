@@ -34,6 +34,16 @@ MonoBehaviour:
   - WHAAATT?? NOOOO
   - END
   - OPT2
-  - OPT2
+  - yEah whateve
   - END
   npcSprite: {fileID: 21300000, guid: cbd2574bd7fc3414eb898bc5fdfb912f, type: 3}
+  itemNeeded: 2
+  reactionToItemGiven:
+  - OMG THANK YOU FORT HIS I LUVVV U
+  - Here, take this.
+  - GIVE 4
+  - END
+  dialogueAfterItemGiven:
+  - Go forth my loved one!
+  unknownItemGiven:
+  - What is this?

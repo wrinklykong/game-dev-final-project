@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   dialogue:
-  - Hey kid, what are YOU doing around here?
   - OPTION
   - I dont know
   - I'm sorry?
+  - Hey kid, what are YOU doing around here?
   - OPT1
   - Don't play dumb kid, you know what you're doing here.
   - This is a HIGHLY restricted area, NO visitors.
@@ -26,4 +26,13 @@ MonoBehaviour:
   - OPT2
   - I dont have time for this, so SCRAM.
   - END
-  npcSprite: {fileID: 0}
+  npcSprite: {fileID: 21300000, guid: cbd2574bd7fc3414eb898bc5fdfb912f, type: 3}
+  itemNeeded: 0
+  reactionToItemGiven:
+  - Huh, you really do have a pass then.
+  - Alright, get in here kid.
+  - END
+  dialogueAfterItemGiven:
+  - Don't you see I'm busy?
+  unknownItemGiven:
+  - I don't have time for this.

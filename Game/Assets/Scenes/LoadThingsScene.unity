@@ -745,7 +745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.54}
   m_SizeDelta: {x: 8, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280291779
@@ -851,19 +851,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698900020108105105, guid: 77368e8a92de9b94f8017b571f7afcaa, type: 3}
       propertyPath: m_Size.x
-      value: 0.1989459
+      value: 0.3382179
       objectReference: {fileID: 0}
     - target: {fileID: 7698900020108105105, guid: 77368e8a92de9b94f8017b571f7afcaa, type: 3}
       propertyPath: m_Size.y
-      value: 0.21824457
+      value: 0.3382179
       objectReference: {fileID: 0}
     - target: {fileID: 7698900020108105105, guid: 77368e8a92de9b94f8017b571f7afcaa, type: 3}
       propertyPath: m_Offset.x
-      value: 0.027018296
+      value: 0.04197982
       objectReference: {fileID: 0}
     - target: {fileID: 7698900020108105105, guid: 77368e8a92de9b94f8017b571f7afcaa, type: 3}
       propertyPath: m_Offset.y
-      value: -0.17368631
+      value: -0.13864282
       objectReference: {fileID: 0}
     - target: {fileID: 7698900020108105116, guid: 77368e8a92de9b94f8017b571f7afcaa, type: 3}
       propertyPath: m_Name
@@ -3710,7 +3710,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -151540597
-  m_SortingOrder: 100
+  m_SortingOrder: 150
   m_TargetDisplay: 0
 --- !u!1 &857747398
 GameObject:
@@ -4901,7 +4901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.017, y: 0.0256}
+  m_AnchoredPosition: {x: 0.017, y: 0.54}
   m_SizeDelta: {x: 7.3391, y: 1.392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102578078

@@ -18,3 +18,8 @@ MonoBehaviour:
   - Welcome to my shop.
   - END
   npcSprite: {fileID: 0}
+  itemNeeded: 0
+  reactionToItemGiven: []
+  dialogueAfterItemGiven: []
+  unknownItemGiven:
+  - 

@@ -169,6 +169,7 @@ public class HeldItemScript : MonoBehaviour
                     handleOnPlayer();
                     break;
                 case "npc":
+                Debug.Log("Item over NPC");
                     handleOnNPC();
                     break;
                 case "object":
