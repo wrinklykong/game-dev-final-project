@@ -110,6 +110,7 @@ public class HeldItemScript : MonoBehaviour
                     else if ( itemHeldDown.wearable ) {
                         // put it on da player somehow
                         SingletonPlayer.instance.disguse();
+                        sfxMixer.playClip("whistle", "o");
                         removeItemAfterGiven();
                     }
                     else {

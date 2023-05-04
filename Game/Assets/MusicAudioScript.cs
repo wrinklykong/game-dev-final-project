@@ -7,10 +7,17 @@ public class MusicAudioScript : MonoBehaviour
 
     [Header("Audio Clips")]
     public AudioClip testSong;
+    public AudioClip test;
 
     public AudioClip errorSFX;
+    public AudioClip sampleSceneAS;
+    public AudioClip citySceneAS;
+    public AudioClip cemetarySceneAS;
+    public AudioClip houseSceneAS;
+    public AudioClip graveSceneAS;
 
-    private AudioSource musicSource;
+
+    public AudioSource musicSource;
 
     public static MusicAudioScript instance { get; private set; }
 
@@ -28,7 +35,22 @@ public class MusicAudioScript : MonoBehaviour
         AudioClip clipToBePlayed;
         switch( musicname ) {
             case "test":
-                clipToBePlayed = testSong;
+                clipToBePlayed = test;
+                break;
+            case "sampleScene":
+                clipToBePlayed = sampleSceneAS;
+                break;
+            case "cemetaryScene":
+                clipToBePlayed = cemetarySceneAS;
+                break;
+            case "houseScene":
+                clipToBePlayed = houseSceneAS;
+                break;
+            case "graveScene":
+                clipToBePlayed = graveSceneAS;
+                break;
+            case "cityScene":
+                clipToBePlayed = citySceneAS;
                 break;
             default:
                 clipToBePlayed = errorSFX;
@@ -36,5 +58,10 @@ public class MusicAudioScript : MonoBehaviour
         }
         musicSource.clip = clipToBePlayed;
         musicSource.Play();
+    }
+
+
+    public void stopMusic() {
+        musicSource.Stop();
     }
 }

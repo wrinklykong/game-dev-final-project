@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b86c62d2f8dad4898d0d949242f60f, type: 3}
-  m_Name: GraveDigNPC
+  m_Name: ScriptableObjects
   m_EditorClassIdentifier: 
-  npcName: GraveToBeDug
-  dialogue: []
+  npcName: SignEnd
+  dialogue:
+  - You beat the game! You find the corpse of the evil guy.
+  - Thanks for playing Gamer.
+  - Take this EPIC item as reward.
+  - GIVE
   npcSprite: {fileID: 0}
-  itemNeeded: 8
-  reactionToItemGiven:
-  - '* You dig up the dirt'
-  - ...
-  - You find something!
-  dialogueAfterItemGiven:
-  - Nothing happened.
+  itemNeeded: 0
+  reactionToItemGiven: []
+  dialogueAfterItemGiven: []
   unknownItemGiven:
-  - Nothing happened.
-  disgusedReaction:
-  - Nothing happened.
-  itemGivenToPlayer: {fileID: 0}
+  - I am a sign!
+  disgusedReaction: []
+  itemGivenToPlayer: {fileID: 11400000, guid: 54a578036c7e9f348ad5038fec0d9068, type: 2}

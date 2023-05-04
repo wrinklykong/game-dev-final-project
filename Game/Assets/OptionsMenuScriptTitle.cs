@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class OptionsMenuScript : MonoBehaviour
+public class OptionsMenuScriptTitle : MonoBehaviour
 {
     private Slider[] sliders;
     private Canvas cv;
 
     public AudioMixer mixer;
-    public SFXAudioScript audios;
+    public SFXAudioScriptTitle audios;
     public AudioSource audioss;
 
     public AudioSource audiom;

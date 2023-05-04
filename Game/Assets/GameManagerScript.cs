@@ -9,6 +9,9 @@ public class GameManagerScript : MonoBehaviour
 {
     public static GameManagerScript instance { get; private set; }
     public string lastScene;
+    public MusicAudioScript aScript;
+
+    public AudioClip sampleSceneAS;
 
     void Awake() {
         if ( instance != null && instance != this ) {
@@ -40,9 +43,12 @@ public class GameManagerScript : MonoBehaviour
         // are nested switch statements a good idea? maybe not lol
         switch (next.name) {
             case "HouseScene":
+            
+                aScript.playClip("houseScene", "o");
                 SingletonPlayer.instance.changePos(0.3f,0.2f);
                 break;
             case "SampleScene":
+                aScript.playClip("sampleScene", "o");
                 if ( lastScene == "HouseScene" ) {
                     SingletonPlayer.instance.changePos(3.7f,7.5f);
                 }
@@ -51,6 +57,7 @@ public class GameManagerScript : MonoBehaviour
                 }
                 break;
             case "CityScene":
+                aScript.playClip("cityScene", "o");
                 if ( lastScene == "CemetaryScene" ) {
                     SingletonPlayer.instance.changePos(16f,13.5f);  // for some reason, need to add like +3 on Y for it to proplery work, idk why
                 }
@@ -62,10 +69,16 @@ public class GameManagerScript : MonoBehaviour
                 }
                 break;
             case "HousePrefab":
+                aScript.playClip("houseScene", "o");
                 SingletonPlayer.instance.changePos(4.15f,-2.5f);  // for some reason, need to add like +3 on Y for it to proplery work, idk why
                 break;
             case "CemetaryScene":
+                aScript.playClip("cemetaryScene", "o");
                 SingletonPlayer.instance.changePos(3f, 0f);
+                break;
+            case "GraveScene":
+                aScript.playClip("graveScene", "o");
+                SingletonPlayer.instance.changePos(-1.5f, 1.5f);
                 break;
             default:
                 break;

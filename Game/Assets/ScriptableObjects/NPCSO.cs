@@ -29,6 +29,7 @@ public class NPCSO : ScriptableObject
                 CemetaryManager.instance.deleteDoor();
             }
             else if ( npcName == "GraveToBeDug" ) {
+                Debug.Log("Digging grave");
                 CemetaryManager.instance.digGrave();
             }
             return true;
@@ -44,7 +45,7 @@ public class NPCSO : ScriptableObject
         if ( itemGiven ) {
             return dialogueAfterItemGiven;
         }
-        else if ( SingletonPlayer.instance.isDisgused() && npcName == "Guard" ) {          // change the thingy LOL ^_^
+        else if ( SingletonPlayer.instance.isDisgused() && npcName == "Guard" && !itemGiven ) {          // change the thingy LOL ^_^
             return disgusedReaction;
         }
         return dialogue;

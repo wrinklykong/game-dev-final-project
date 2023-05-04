@@ -8,7 +8,7 @@ public class CemetaryManager : MonoBehaviour
     public CapsuleCollider2D cc;
     
     public BoxCollider2D doorToGrave;
-    public CircleCollider2D digGraveCollider;
+    public BoxCollider2D digGraveCollider;
 
     public static CemetaryManager instance { get; private set; }
 
@@ -23,6 +23,6 @@ public class CemetaryManager : MonoBehaviour
 
     public void digGrave() {
         doorToGrave.enabled = false;
-        digGraveCollider.enabled = true;
+        digGraveCollider.enabled = true;            // WHY NO WORKK DD:
     }
 }
