@@ -14,6 +14,8 @@ public class CharacterMovement : MonoBehaviour
     private SpriteRenderer sr;
     private Animator anim;
 
+    public bool disgused;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class CharacterMovement : MonoBehaviour
         talkingToNPC = false;
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        disgused = false;
     }
 
     public void startTalkingToNPC() {
@@ -42,7 +45,12 @@ public class CharacterMovement : MonoBehaviour
             float moveVertical = Input.GetAxis ("Vertical");
             rb2d.velocity = new Vector2(speed * moveHorizontal, speed * moveVertical);
             if ( moveHorizontal == 0 ) {
-                anim.Play("Idle");
+                if ( disgused ) {
+                        anim.Play("DisgusedIdle");
+                }
+                else {
+                    anim.Play("Idle");
+                }
             }
             else {
                 if ( moveHorizontal < 0 ) {
@@ -52,13 +60,25 @@ public class CharacterMovement : MonoBehaviour
                     sr.flipX = false;
                 }
                 if ( !anim.GetCurrentAnimatorStateInfo(0).IsName("Walking") ) {
-                    anim.Play("Walking");
+                    if ( disgused ) {
+                        anim.Play("DisgusedWalking");
+                    }
+                    else {
+                        anim.Play("Walking");
+                    }
                 }
-                else if (!sfxAS.sfxSource.isPlaying) {
+                if (!sfxAS.sfxSource.isPlaying) {
                     SFXAudioScript.instance.playClip("walk", "o");
                 }
             }
         }
 
+    }
+    
+    public void setDisgused() {
+        disgused = true;
+    }
+    public bool getDisgused() {
+        return disgused;
     }
 }

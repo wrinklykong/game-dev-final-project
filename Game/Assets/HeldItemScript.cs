@@ -107,12 +107,18 @@ public class HeldItemScript : MonoBehaviour
                         sfxMixer.playClip("eat", "o");
                         removeItemAfterGiven();
                     }
+                    else if ( itemHeldDown.wearable ) {
+                        // put it on da player somehow
+                        SingletonPlayer.instance.disguse();
+                        removeItemAfterGiven();
+                    }
                     else {
                         // you cant eat that!
                         putItemBackIntoInventory();
                     }
                     break;
                 case "npc":
+                    Debug.Log(itemHeldDown.id);
                     if ( objectColliding.GetComponent<NPCScript>().handleItemGiven(itemHeldDown) ) {
                         removeItemAfterGiven();
                     }
@@ -122,6 +128,7 @@ public class HeldItemScript : MonoBehaviour
                     break;
                 default:
                     Debug.Log("Default case release");
+                    putItemBackIntoInventory();
                     break;
             }
         }
@@ -143,6 +150,9 @@ public class HeldItemScript : MonoBehaviour
     public void handleOnPlayer() {
         if ( itemHeldDown.edible ) {
             itemActionText.text = "Eat!";
+        }
+        else if ( itemHeldDown.wearable ) {
+            itemActionText.text = "Wear!";
         }
         else {
             itemActionText.text = "You cant eat this!";

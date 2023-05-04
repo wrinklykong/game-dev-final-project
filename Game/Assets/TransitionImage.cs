@@ -72,6 +72,9 @@ public class TransitionImage : MonoBehaviour
                 case "doorToCityHouse1":
                     SceneManager.LoadScene("HousePrefab", LoadSceneMode.Single);
                     break;
+                case "doorToGrave":
+                    SceneManager.LoadScene("GraveScene", LoadSceneMode.Single);
+                    break;
                 default:
                     Debug.Log("Unknown scene :,(");
                     break;

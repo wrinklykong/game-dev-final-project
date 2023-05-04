@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b86c62d2f8dad4898d0d949242f60f, type: 3}
-  m_Name: SignCemetary
+  m_Name: WaterInCity
   m_EditorClassIdentifier: 
   npcName: 
   dialogue:
-  - A dead guy used to be here.
-  - Dunno where he is now.
-  - Say, that area of dirt looks a little loose ...
+  - Nothing happens.
   npcSprite: {fileID: 0}
-  itemNeeded: 0
+  itemNeeded: 3
   reactionToItemGiven:
-  - I am a sign!
+  - '* You fill up the water bucket.'
+  - GIVE
   dialogueAfterItemGiven:
-  - I am a sign!
+  - Nothing happens.
   unknownItemGiven:
-  - I am a sign!
-  itemGivenToPlayer: {fileID: 0}
+  - Nothing happens.
+  itemGivenToPlayer: {fileID: 11400000, guid: ed436ad12e8c7af4ca426b4995735121, type: 2}

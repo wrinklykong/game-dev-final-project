@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b86c62d2f8dad4898d0d949242f60f, type: 3}
   m_Name: CemetaryGuy
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Guard
   dialogue:
   - OPTION
   - I dont know
@@ -33,6 +33,11 @@ MonoBehaviour:
   - Alright, get in here kid.
   - END
   dialogueAfterItemGiven:
-  - Don't you see I'm busy?
+  - Good day sir!
   unknownItemGiven:
   - I don't have time for this.
+  disgusedReaction:
+  - Hello kind sir!!! Welcome to the Cemetary.
+  - I don't want to keep you long, here is your key. Have a GREAT day!
+  - GIVE
+  itemGivenToPlayer: {fileID: 11400000, guid: 43243848fc7f4544ab6183544e2ea3ef, type: 2}

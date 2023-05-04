@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b86c62d2f8dad4898d0d949242f60f, type: 3}
-  m_Name: SignCemetary
+  m_Name: WaterFromCity
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Water
   dialogue:
-  - A dead guy used to be here.
-  - Dunno where he is now.
-  - Say, that area of dirt looks a little loose ...
+  - I am just a pool of water!
   npcSprite: {fileID: 0}
-  itemNeeded: 0
+  itemNeeded: 3
   reactionToItemGiven:
-  - I am a sign!
+  - '* You filled the bucket up with water.'
+  - GIVE
   dialogueAfterItemGiven:
-  - I am a sign!
+  - I am just a pool of water.
   unknownItemGiven:
-  - I am a sign!
-  itemGivenToPlayer: {fileID: 0}
+  - I am just a pool of water.
+  itemGivenToPlayer: {fileID: 11400000, guid: ed436ad12e8c7af4ca426b4995735121, type: 2}

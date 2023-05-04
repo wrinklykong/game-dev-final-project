@@ -27,6 +27,7 @@ public class ShowItemWhenGivenScript : MonoBehaviour
     }
 
     public void showItemWhenGiven(ItemSO item) {
+        
         StartCoroutine(SpinnyCORoutine());
 
         IEnumerator SpinnyCORoutine() {

@@ -32,7 +32,7 @@ MonoBehaviour:
     town.
   - Bring me some and I will make it worth your while.
   npcSprite: {fileID: 0}
-  itemNeeded: 0
+  itemNeeded: 4
   reactionToItemGiven:
   - OOOohhHHH THANK YOU!!!!
   - I am FREE! I am FREE!

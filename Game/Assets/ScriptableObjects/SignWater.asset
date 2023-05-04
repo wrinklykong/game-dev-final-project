@@ -18,7 +18,10 @@ MonoBehaviour:
   - Looks like a nice place to drop something ...
   npcSprite: {fileID: 0}
   itemNeeded: 0
-  reactionToItemGiven: []
-  dialogueAfterItemGiven: []
-  unknownItemGiven: []
+  reactionToItemGiven:
+  - I am a sign.
+  dialogueAfterItemGiven:
+  - I am a sign.
+  unknownItemGiven:
+  - I am a sign.
   itemGivenToPlayer: {fileID: 0}

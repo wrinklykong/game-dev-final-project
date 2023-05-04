@@ -27,4 +27,12 @@ public class SingletonPlayer : MonoBehaviour
         old.y = yPos;
         playerTransform.position = old;
     }
+
+    public void disguse() {
+        GetComponentsInChildren<CharacterMovement>()[0].setDisgused();
+    }
+
+    public bool isDisgused() {
+        return GetComponentsInChildren<CharacterMovement>()[0].getDisgused();
+    }
 }

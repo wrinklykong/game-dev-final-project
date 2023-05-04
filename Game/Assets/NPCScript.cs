@@ -11,9 +11,9 @@ public class NPCScript : MonoBehaviour
     private string[] dialogueList;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        so = GetComponent<SpriteRenderer>();
+        so = this.GetComponent<SpriteRenderer>();
         nameOfNPC = npcObject.npcName;
         dialogueList = npcObject.dialogue;
         so.sprite = npcObject.npcSprite;
@@ -32,6 +32,7 @@ public class NPCScript : MonoBehaviour
     }
 
     public bool handleItemGiven(ItemSO itemGiven) {
+        Debug.Log(npcObject.handleItemGiven(itemGiven.id));
         return npcObject.handleItemGiven(itemGiven.id);
     }
 

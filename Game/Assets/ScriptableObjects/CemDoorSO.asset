@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b86c62d2f8dad4898d0d949242f60f, type: 3}
-  m_Name: SignCemetary
+  m_Name: CemDoorSO
   m_EditorClassIdentifier: 
-  npcName: 
-  dialogue:
-  - A dead guy used to be here.
-  - Dunno where he is now.
-  - Say, that area of dirt looks a little loose ...
-  npcSprite: {fileID: 0}
-  itemNeeded: 0
+  npcName: CemDoor
+  dialogue: []
+  npcSprite: {fileID: 21300000, guid: 631ddebb8396d8248993e12162956ea2, type: 3}
+  itemNeeded: 5
   reactionToItemGiven:
-  - I am a sign!
+  - '* You open the door'
   dialogueAfterItemGiven:
-  - I am a sign!
+  - Nothing happens.
   unknownItemGiven:
-  - I am a sign!
+  - Nothing happens.
+  disgusedReaction:
+  - Nothing happens.
   itemGivenToPlayer: {fileID: 0}

@@ -102,12 +102,13 @@ public class DialogueScript : MonoBehaviour
     }
 
     public void initializeDialogue( string[] a, ItemSO its ) {
+        Debug.Log("Initialized: " + its);
         destroyDialogueQueue();
         foreach ( string x in a ) {
             DialogueList.Enqueue(x);
         }
-        nextDialogue();
         setItemToGive( its );
+        nextDialogue();
         
     }
 

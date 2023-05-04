@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b86c62d2f8dad4898d0d949242f60f, type: 3}
-  m_Name: SignCemetary
+  m_Name: GraveDigNPC
   m_EditorClassIdentifier: 
-  npcName: 
-  dialogue:
-  - A dead guy used to be here.
-  - Dunno where he is now.
-  - Say, that area of dirt looks a little loose ...
+  npcName: Grave
+  dialogue: []
   npcSprite: {fileID: 0}
-  itemNeeded: 0
+  itemNeeded: 8
   reactionToItemGiven:
-  - I am a sign!
+  - '* You dig up the dirt'
+  - ...
+  - You find something!
   dialogueAfterItemGiven:
-  - I am a sign!
+  - Nothing happened.
   unknownItemGiven:
-  - I am a sign!
+  - Nothing happened.
+  disgusedReaction:
+  - Nothing happened.
   itemGivenToPlayer: {fileID: 0}

@@ -19,6 +19,7 @@ TagManager:
   - top
   - bottom
   - water
+  - doorToGrave
   layers:
   - Default
   - TransparentFX

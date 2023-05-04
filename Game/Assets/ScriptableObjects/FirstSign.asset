@@ -22,10 +22,10 @@ MonoBehaviour:
   - Here you can access your inventory and use items.
   - You can drag items onto the environment by clicking once on the item in your
     inventory and clicking once to drop.
-  - Try it out! Give this arrow to me.
+  - Try it out! Give this apple to me.
   - GIVE
   npcSprite: {fileID: -1897461097, guid: 8fb34d6aae9da194ca1840f6b81a78d6, type: 3}
-  itemNeeded: 1
+  itemNeeded: 2
   reactionToItemGiven:
   - Good job! That ends the tutorial
   - Have fun!
@@ -46,4 +46,4 @@ MonoBehaviour:
   - END
   unknownItemGiven:
   - I am a sign! I have no pockets!
-  itemGivenToPlayer: {fileID: 11400000, guid: a6137b2157d188b43a1878da464916c4, type: 2}
+  itemGivenToPlayer: {fileID: 11400000, guid: 54a578036c7e9f348ad5038fec0d9068, type: 2}
