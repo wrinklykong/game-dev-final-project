@@ -22,7 +22,7 @@ public class CemetaryManager : MonoBehaviour
     }
 
     public void digGrave() {
-        doorToGrave.enabled = true;
-        digGraveCollider.enabled = false;
+        doorToGrave.enabled = false;
+        digGraveCollider.enabled = true;
     }
 }

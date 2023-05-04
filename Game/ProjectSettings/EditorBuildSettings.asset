@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HousePrefab.unity
     guid: 61a9afa051b81b44a8d4c934134f4392
+  - enabled: 1
+    path: Assets/Scenes/GraveScene.unity
+    guid: 3d8737836ee077b40a0c677e30bbe9f2
   m_configObjects: {}
